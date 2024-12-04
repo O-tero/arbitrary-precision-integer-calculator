@@ -28,7 +28,6 @@ func add(x, y string) string {
 	x = strings.Repeat("0", maxLen-len(x)) + x
 	y = strings.Repeat("0", maxLen-len(y)) + y
 
-	// Adding each digit starting from the right
 	var result string
 	carry := 0
 
@@ -38,7 +37,6 @@ func add(x, y string) string {
 		carry = digitSum / 10
 	}
 
-	// If there is a carry left, add it
 	if carry > 0 {
 		result = string(carry+'0') + result
 	}
@@ -158,15 +156,12 @@ func decimalToBase(num *big.Int, base int) string {
 
 // Logarithm base b of a number (log_b(n))
 func logarithm(n, b string) (string, error) {
-	// Parse inputs as big.Float
 	bn, ok1 := new(big.Float).SetString(n)
 	bb, ok2 := new(big.Float).SetString(b)
 
 	if !ok1 || !ok2 {
 		return "", fmt.Errorf("invalid input: n=%s, b=%s", n, b)
 	}
-
-	// Convert to float64 for approximation of ln
 	num, _ := bn.Float64()
 	base, _ := bb.Float64()
 
@@ -174,22 +169,17 @@ func logarithm(n, b string) (string, error) {
 		return "", fmt.Errorf("invalid values: n and b must be > 0 and b != 1")
 	}
 
-	// Compute natural logarithms
 	logN := math.Log(num)   // ln(n)
 	logB := math.Log(base)  // ln(b)
 
-	// Calculate log_b(n) = ln(n) / ln(b)
 	result := logN / logB
 
-	// Return result as string
 	return fmt.Sprintf("%.10f", result), nil
 }
 
 
 // Parse and handle fractions (represented as "a/b")
 func addFractions(a, b, c, d string) string {
-	// Convert a/b + c/d
-	// (a*d + b*c) / (b*d)
 	na, _ := new(big.Int).SetString(a, 10)
 	nb, _ := new(big.Int).SetString(b, 10)
 	nc, _ := new(big.Int).SetString(c, 10)
@@ -215,20 +205,16 @@ func main() {
 	fmt.Println("Enter expression (or 'exit' to quit):")
 
 	for {
-		// Read user input
 		fmt.Print("> ")
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input)
 
-		// Exit condition
 		if input == "exit" {
 			break
 		}
 
-		// Parse input
 		parts := strings.Fields(input)
 		if len(parts) == 3 {
-			// Binary operations: a op b
 			a := parts[0]
 			op := parts[1]
 			b := parts[2]
@@ -260,7 +246,6 @@ func main() {
 				fmt.Println("Unknown operator!")
 			}
 		} else if strings.HasSuffix(parts[0], "!") {
-				// Factorial: a!
 			number := strings.TrimSuffix(parts[0], "!")
 			a, err := strconv.Atoi(number)
 			if err != nil {
@@ -273,7 +258,6 @@ func main() {
 		}
 	}
 
-	// Additional functionality
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Print("Enter expression (or 'exit' to quit): ")
@@ -287,7 +271,6 @@ func main() {
 		var base, fracOp string
 		var n, b string
 
-		// Handle fractions
 		if strings.Contains(input, "/") {
 			fmt.Sscanf(input, "%s %s %s %s", &x, &op, &y, &fracOp)
 			if fracOp == "/" {
@@ -297,7 +280,6 @@ func main() {
 			}
 		}
 
-		// Base conversion
 		if strings.Contains(input, "base") {
 			fmt.Sscanf(input, "%s base %s", &x, &base)
 			converted, err := baseToDecimal(x, int(base[0]-'0'))
