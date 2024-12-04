@@ -1,11 +1,11 @@
-Arbitrary Precision Integer Calculator
-This project implements an arbitrary-precision integer calculator in Go. The calculator supports basic arithmetic operations, factorials, and exponentiation. Additionally, it features advanced functionality like base conversions, fractional arithmetic, and logarithmic calculations. What's unique about this implementation is that it doesn't rely on external libraries for its core features, instead leveraging Go's built-in capabilities (math/big) to handle arbitrary-precision arithmetic.
+# Arbitrary Precision Integer Calculator
+* This project implements an arbitrary-precision integer calculator in Go. The calculator supports basic arithmetic operations, factorials, and exponentiation. Additionally, it features advanced functionality like base conversions, fractional arithmetic, and logarithmic calculations. What's unique about this implementation is that it doesn't rely on external libraries for its core features, instead leveraging Go's built-in capabilities (math/big) to handle arbitrary-precision arithmetic.
 
-The application is wrapped in a REPL (Read-Eval-Print Loop), allowing users to interact with the calculator via simple textual commands.
+* The application is wrapped in a REPL (Read-Eval-Print Loop), allowing users to interact with the calculator via simple textual commands.
 
-Key Features
+## Key Features
 1. Arbitrary-Precision Arithmetic
-The calculator handles operations on integers of any size without overflow.
+- The calculator handles operations on integers of any size without overflow.
 Operations supported:
 Addition: e.g., 1000000000000000000 + 2000000000000000000
 Subtraction: e.g., 5000 - 3000
@@ -29,30 +29,29 @@ User-friendly REPL loop to input commands and view results interactively.
 Supports mixed functionality (e.g., fractions and logarithms) seamlessly.
 Error handling for invalid inputs and unsupported operations.
 Design Considerations
-Why Go?
-Go doesn't have native support for arbitrary-precision integers in its core language features but offers the math/big package, which provides low-level building blocks. By combining these primitives with custom logic, the calculator achieves a wide range of functionality.
+### Why Go?
+- Go doesn't have native support for arbitrary-precision integers in its core language features but offers the math/big package, which provides low-level building blocks. By combining these primitives with custom logic, the calculator achieves a wide range of functionality.
 
-Modularity
+- Modularity
 The program is designed with modularity in mind:
-
 Each feature (e.g., base conversion, fraction handling, logarithms) is implemented as a separate function.
 The REPL acts as the orchestrator, parsing user input and calling the appropriate functionality.
-What's Most Interesting?
-Base Conversions:
+### What's Most Interesting?
+- Base Conversions:
 
-Implementing base conversion is computationally significant when working with extremely large numbers in non-decimal bases.
-This required thinking through digit-by-digit processing and efficient modular arithmetic.
-Fraction Handling:
+ Implementing base conversion is computationally significant when working with extremely large numbers in non-decimal bases.
+ This required thinking through digit-by-digit processing and efficient modular arithmetic.
+- Fraction Handling:
 
 Instead of converting fractions to decimals prematurely, operations are performed directly on the numerator and denominator. This ensures precision and minimizes rounding errors.
-Logarithmic Calculations:
+- Logarithmic Calculations:
 
 Using natural logarithms and their properties to derive arbitrary base logarithms showcases an elegant use of mathematical principles.
-REPL Interface:
+- REPL Interface:
 
 Building an intuitive REPL interface required balancing simplicity with flexibility. The REPL dynamically parses input and invokes the correct functions, demonstrating robust input parsing logic.
-Getting Started
-Prerequisites
+## Getting Started
+### Prerequisites
 Install Go: Download Go.
 Clone the repository and navigate to the folder.
 Running the Program
