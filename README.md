@@ -7,23 +7,23 @@
 1. Arbitrary-Precision Arithmetic
 - The calculator handles operations on integers of any size without overflow.
 Operations supported:
-Addition: e.g., 1000000000000000000 + 2000000000000000000
-Subtraction: e.g., 5000 - 3000
-Multiplication: e.g., 123456789 * 987654321
-Division with Remainder: e.g., 10 / 3 produces a quotient and remainder.
-Factorials: e.g., 100!
-Exponentiation: e.g., 2^1000
+Addition: e.g., `1000000000000000000 + 2000000000000000000`
+Subtraction: e.g., `5000 - 3000`
+Multiplication: e.g., `123456789 * 987654321`
+Division with Remainder: e.g., `10 / 3` produces a quotient and remainder.
+Factorials: e.g., `100!`
+Exponentiation: e.g., `2^1000`
 2. Support for Non-Decimal Bases
 Convert numbers between arbitrary bases and decimal.
-Example: Convert 1011 from binary (base 2) to decimal, or vice versa.
+Example: Convert `1011` from binary (base 2) to decimal, or vice versa.
 Demonstrates understanding of base arithmetic and encoding, especially for binary, hexadecimal, and other non-standard bases.
 3. Fractional Arithmetic
-Perform operations on fractions (e.g., 1/2 + 3/4).
+Perform operations on fractions (e.g., `1/2 + 3/4`).
 Returns results in fraction form without premature conversion to decimals.
 Ability to convert fractions to decimal representation.
 4. Logarithmic Calculations
 Compute logarithms in arbitrary bases using natural logarithms.
-Example: Calculate log_2(16) or log_10(1000).
+Example: Calculate `log_2(16`) or `log_10(1000`).
 5. Interactive REPL Interface
 User-friendly REPL loop to input commands and view results interactively.
 Supports mixed functionality (e.g., fractions and logarithms) seamlessly.
@@ -52,41 +52,41 @@ Using natural logarithms and their properties to derive arbitrary base logarithm
 Building an intuitive REPL interface required balancing simplicity with flexibility. The REPL dynamically parses input and invokes the correct functions, demonstrating robust input parsing logic.
 ## Getting Started
 ### Prerequisites
-Install Go: Download Go.
+Install Go: [![Download Go](https://go.dev/doc/install])
 Clone the repository and navigate to the folder.
 Running the Program
-Save the program in a file called calculator.go.
+Save the program in a file called `calculator.go`.
 Open a terminal and navigate to the folder where the file is saved.
 Run the following command:
 bash
-go run calculator.go
+```go run calculator.go```
 Start using the REPL.
 REPL Usage
 The program will display a prompt:
 
 
-Enter expression (or 'exit' to quit):
+```Enter expression (or 'exit' to quit):```
 Example Commands:
 Basic Operations:
-100 + 200
-500 * 300
+`100 + 200`
+`500 * 300`
 Base Conversion:
-1011 base 2
+`1011 base 2`
 Convert a number to decimal from any base.
 Fraction Arithmetic:
-1/2 + 3/4
+`1/2 + 3/4`
 Logarithms:
-log 16 2
+`log 16 2`
 Calculate the logarithm of a number with a specified base.
 Factorials:
-100!
+`100!`
 Exponentiation:
-2^10
+`2^10`
 Type exit to quit the program.
 
 Challenges and Solutions
 Precision Handling
-Ensuring precision for operations like factorials and logarithms required careful use of the math/big package.
+Ensuring precision for operations like factorials and logarithms required careful use of the `math/big` package.
 Error Handling
 The program validates inputs to prevent operations like dividing by zero, invalid base conversions, or malformed fractions.
 Fraction Simplification
@@ -97,7 +97,7 @@ Future Improvements
 Advanced Mathematical Functions:
 Add support for square roots, trigonometric functions, and more.
 Decimal Bases for Fractional Input:
-Extend base conversion to work for fractional bases (e.g., converting 1.101 in base 2).
+Extend base conversion to work for fractional bases (e.g., converting `1.101` in base 2).
 Custom Error Messages:
 Provide more descriptive feedback for invalid inputs.
 Configuration Options:
