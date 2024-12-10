@@ -8,10 +8,15 @@
 - The calculator handles operations on integers of any size without overflow.
 Operations supported:
 Addition: e.g., `1000000000000000000 + 2000000000000000000`
+
 Subtraction: e.g., `5000 - 3000`
+
 Multiplication: e.g., `123456789 * 987654321`
+
 Division with Remainder: e.g., `10 / 3` produces a quotient and remainder.
+
 Factorials: e.g., `100!`
+
 Exponentiation: e.g., `2^1000`
 2. Support for Non-Decimal Bases
 Convert numbers between arbitrary bases and decimal.
@@ -84,23 +89,15 @@ Exponentiation:
 `2^10`
 Type exit to quit the program.
 
-Challenges and Solutions
-Precision Handling
-Ensuring precision for operations like factorials and logarithms required careful use of the `math/big` package.
-Error Handling
-The program validates inputs to prevent operations like dividing by zero, invalid base conversions, or malformed fractions.
-Fraction Simplification
-Fractions are stored as numerator and denominator. The addition and multiplication operations reduce them to their simplest form.
-Scalability
-Efficient algorithms for base conversion and logarithmic calculations were chosen to handle large-scale inputs without significant performance degradation.
-Future Improvements
-Advanced Mathematical Functions:
-Add support for square roots, trigonometric functions, and more.
-Decimal Bases for Fractional Input:
-Extend base conversion to work for fractional bases (e.g., converting `1.101` in base 2).
-Custom Error Messages:
-Provide more descriptive feedback for invalid inputs.
-Configuration Options:
-Allow users to set precision for logarithms or choose rounding modes for fractions.
-Conclusion
+##Challenges and Solutions
+* Precision Handling - Ensuring precision for operations like factorials and logarithms required careful use of the `math/big` package.
+* Error Handling - The program validates inputs to prevent operations like dividing by zero, invalid base conversions, or malformed fractions.
+* Fraction Simplification - Fractions are stored as numerator and denominator. The addition and multiplication operations reduce them to their simplest form.
+* Scalability - Efficient algorithms for base conversion and logarithmic calculations were chosen to handle large-scale inputs without significant performance degradation.
+## Future Improvements
+* Advanced Mathematical Functions - Add support for square roots, trigonometric functions, and more.
+* Decimal Bases for Fractional Input - Extend base conversion to work for fractional bases (e.g., converting `1.101` in base 2).
+* Custom Error Messages - Provide more descriptive feedback for invalid inputs.
+* Configuration Options - Allow users to set precision for logarithms or choose rounding modes for fractions.
+## Conclusion
 This calculator highlights the versatility of Go's math/big package and the power of modular program design. It’s a practical demonstration of implementing advanced mathematical operations and a user-friendly REPL interface in a language without native support for arbitrary precision. This project serves as a great foundation for anyone looking to explore computational mathematics and algorithmic design in Go.
